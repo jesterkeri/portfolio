@@ -81,7 +81,8 @@ body {
 }
 
 /* Wrapper to allow background to extend */
-body:has(.home) {
+body:has(.home),
+body:has(.achievements-section) {
   background: #FDFCFF;
 }
 
