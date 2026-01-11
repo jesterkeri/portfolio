@@ -68,6 +68,8 @@ export default function Skills() {
           <h3 className="skill-name large">Frontend</h3>
           <div className="skill-content">
             <div className="skill-items">
+              <span className="skill-item">JavaScript</span>
+              <span className="skill-item">TypeScript</span>
               <span className="skill-item">CSS</span>
               <span className="skill-item">Tailwind CSS</span>
               <span className="skill-item">React.js</span>
