@@ -1637,6 +1637,14 @@ body.section-pager-active {
    ===================================================== */
 
 /* --- Tablet (up to 768px) inherits mobile structure with adjusted paddings --- */
+/* =====================================================
+   MOBILE STYLES — Drop-in replacement
+   Replace the existing @media (max-width: 768px) block
+   at the bottom of src/app/globals.css with this file's
+   contents. Mobile-only; desktop is untouched.
+   ===================================================== */
+
+/* --- Tablet (up to 768px) inherits mobile structure with adjusted paddings --- */
 @media (max-width: 768px) {
   :root {
     --page-margin: 24px;
@@ -1995,8 +2003,9 @@ body.section-pager-active {
     align-items: stretch;
     margin-top: 40px;
     padding: 0;
+    z-index: 10;
   }
-  .experience-section { width: 100%; gap: 0; }
+  .experience-section { width: 100%; gap: 0; position: relative; z-index: 10; }
   .experience-item {
     padding: 16px 0;
     border-bottom: 1px solid rgba(255,255,255,0.15);
@@ -2071,6 +2080,7 @@ body.section-pager-active {
     gap: 24px;
     margin-top: 32px;
     padding: 0;
+    z-index: 10;
   }
 
   .skill-category {
@@ -2163,6 +2173,7 @@ body.section-pager-active {
     margin-top: 28px;
     padding: 0;
     overflow: visible;
+    z-index: 10;
   }
 
   /* Card — compact collapsed state */
