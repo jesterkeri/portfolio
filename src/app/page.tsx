@@ -140,6 +140,7 @@ export default function Home() {
       <div className={`socials ${showSocials ? 'socials-visible' : ''}`}>
         <div className="socials-content">
           <a href="#" className="social-link">X</a>
+          <a href="https://github.com/jesterkeri" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
           <span className="social-item">Telegram</span>
           <span className="social-item">Email</span>
         </div>

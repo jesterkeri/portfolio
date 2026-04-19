@@ -5,39 +5,52 @@ import { TransitionLink } from "@/components/TransitionLink";
 
 const projects = [
   {
+    name: "Mako Markets",
+    description: "Mako Markets is a short-form prediction market platform on Monad testnet. Fast markets, transparent settlement, and a Next.js frontend talking to Foundry-built Solidity contracts. Built for Monad Blitz Lagos.",
+    image: "/mako.png",
+    url: "https://makomarket.xyz"
+  },
+  {
+    name: "Krait",
+    description: "Krait is a cross-chain AI trading agent operating across Sui, Monad, Base, and Solana. It runs price-action strategies with indicator confluence, and pairs CCTP with account abstraction so users never touch gas. Three interfaces ship with it: a CLI, a web app, and a TradingView Chrome extension.",
+    image: "/krait.png",
+    url: "#"
+  },
+  {
+    name: "Cuttlefish",
+    description: "Cuttlefish is an AI-powered vibe coding app for Web3, running fully on-chain via 0G compute. Prompts stay private, generated code is verifiable, and everything ships to testnet or devnet first.",
+    image: "/cuttlefish.png",
+    url: "#"
+  },
+  {
+    name: "Buddies",
+    description: "Buddies is an ElizaOS multi-agent productivity platform with five specialized agents: Chief orchestrates, Hawk watches priorities, Radar surfaces context, Bounty Hunter chases deliverables, and Buddy handles the human side. Built for the Nosana Builders Challenge.",
+    image: "/buddies.png",
+    url: "#"
+  },
+  {
     name: "GiveRep",
-    description: "Giverep is a social reputation platform built on the Sui Blockchain",
-    image: "/giverep.png"
+    description: "GiveRep is a social reputation platform built on the Sui blockchain. It turns community contributions into on-chain reputation, making trust portable across Sui apps.",
+    image: "/giverep.png",
+    url: "#"
   },
   {
     name: "Krilly",
-    description: "A creative design project showcasing modern UI/UX principles",
-    image: "/krilly.png"
+    description: "A creative design project showcasing modern UI/UX principles.",
+    image: "/krilly.png",
+    url: "#"
   },
   {
     name: "Sui NG",
-    description: "Nigeria's premier Sui blockchain community platform",
-    image: "/suing.png"
-  },
-  {
-    name: "Roo",
-    description: "An innovative application built for seamless user experiences",
-    image: "/roo.png"
+    description: "Nigeria's premier Sui blockchain community platform, built to onboard and connect local developers, creators, and builders into the Sui ecosystem.",
+    image: "/suing.png",
+    url: "#"
   },
   {
     name: "Blast.Fun",
-    description: "A fun and engaging platform for the Blast ecosystem",
-    image: "/blastfun.png"
-  },
-  {
-    name: "Vonyll",
-    description: "Modern design solutions for digital products",
-    image: "/vonyll.png"
-  },
-  {
-    name: "la Vera",
-    description: "Elegant and sophisticated design implementations",
-    image: "/lavera.png"
+    description: "A fun and engaging platform for the Blast ecosystem.",
+    image: "/blastfun.png",
+    url: "#"
   },
 ];
 
@@ -103,13 +116,20 @@ export default function Projects() {
               <div className="project-content-expanded">
                 <h3 className="project-name-expanded">{project.name}</h3>
                 <p className="project-description">{project.description}</p>
-                <div className="project-collapse">
-                  <span className="collapse-text">Demo</span>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Visit ${project.name}`}
+                >
+                  <span className="project-link-text">Visit</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" fill="#121212"/>
-                    <path d="M10 8L16 12L10 16V8Z" fill="#FFFFFF"/>
+                    <path d="M9.5 14.5L14.5 9.5M14.5 9.5H10M14.5 9.5V14" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -123,6 +143,7 @@ export default function Projects() {
       <div className={`socials ${showSocials ? 'socials-visible' : ''}`}>
         <div className="socials-content">
           <a href="#" className="social-link">X</a>
+          <a href="https://github.com/jesterkeri" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
           <span className="social-item">Telegram</span>
           <span className="social-item">Email</span>
         </div>
