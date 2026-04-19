@@ -1821,113 +1821,99 @@ body.section-pager-active {
   }
 
   /* ========== HOME ========== */
+  /* Preserve the desktop layered layout on mobile: JOSHUA / image / ZEKERI
+     all centered vertically with the image absolutely positioned between the
+     names. Only the font sizes and image scale are reduced. */
   .home {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding: 0;
-    padding-top: 96px;
-    padding-bottom: 140px;
-    height: auto;
+    position: relative;
+    width: 100%;
+    height: 100vh;
     min-height: 100vh;
     min-height: 100dvh;
-    overflow-x: hidden;
+    padding: 0 var(--page-margin);
+    overflow: hidden;
   }
 
   .background-color { width: 100vw; }
 
-  /* Native vertically stacked flow */
   .name-container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: var(--page-margin);
+    right: var(--page-margin);
+    transform: translateY(-50%);
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    inset: auto;
-    width: 100%;
-    padding: 0 var(--page-margin);
-    z-index: 15;
-    order: 1;
-    gap: 0;
+    z-index: 11;
   }
+
   .name-joshua,
   .name-zekeri {
-    font-size: clamp(48px, 16vw, 76px);
-    line-height: 0.92;
-    letter-spacing: -1px;
-    display: block;
+    font-size: clamp(28px, 9vw, 44px);
+    line-height: 1;
+    letter-spacing: 0;
   }
-  .name-joshua { text-align: left; align-self: flex-start; }
-  .name-zekeri { text-align: right; align-self: flex-end; margin-top: 0; }
 
-  /* Hero image natively stacked */
+  /* Hero image centered between the names, scaled for mobile */
   .hero-image {
-    position: relative !important;
-    top: auto !important; bottom: auto !important; left: auto !important;
-    transform: none !important;
-    height: auto !important; max-height: 48vh;
-    width: auto !important; max-width: 80vw;
-    margin: -5vw 0; /* Tighten visual gap around image */
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: 72vh !important;
+    width: auto !important;
+    max-width: 60vw;
     z-index: 10;
     object-fit: contain;
   }
   .hero-image.ghost-image { display: none !important; }
 
-  /* White masked JOSHUA — kept, script handles positioning on resize */
+  /* White masked JOSHUA mirrors the black JOSHUA size; JS positions it. */
   .name-joshua-white {
-    font-size: clamp(48px, 16vw, 76px) !important;
-    line-height: 0.92;
-    letter-spacing: -1px;
+    font-size: clamp(28px, 9vw, 44px) !important;
+    line-height: 1;
+    letter-spacing: 0;
   }
 
-  /* DESIGN stroked text — repositioned as a subtle ambient mark */
   .design-text {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 116px;
-    width: 100%;
+    left: var(--page-margin);
+    bottom: 32px;
     height: auto;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: var(--page-margin);
-    opacity: 0.18;
+    width: auto;
+    opacity: 0.22;
     pointer-events: none;
     z-index: 2;
   }
   .design-text text { font-size: 52px; }
 
-  /* Role text container */
   .text-container {
-    position: relative;
-    inset: auto;
-    order: 3;
-    align-self: flex-end;
+    position: absolute;
+    right: var(--page-margin);
+    top: auto;
+    bottom: 32px;
     align-items: flex-end;
-    width: auto;
-    margin: 32px var(--page-margin) 0 auto;
-    padding-right: 0;
-    padding-bottom: 10px;
+    padding: 0 0 8px;
     border-bottom: 1.5px solid #121212;
     z-index: 20;
   }
   .role {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.3;
     text-align: right;
     letter-spacing: 0;
   }
 
-  /* Big stroked 00 */
   .number-text {
     position: absolute;
     right: var(--page-margin);
-    bottom: 32px;
-    font-size: 84px;
+    bottom: 96px;
+    font-size: 64px;
     line-height: 0.8;
     color: transparent;
     -webkit-text-stroke: 1.5px #121212;
-    z-index: -1 !important;
+    z-index: 0;
   }
 
   /* ========== ABOUT ========== */
@@ -2033,16 +2019,16 @@ body.section-pager-active {
     opacity: 0.85;
   }
 
-  /* About section number — big stroked 01 */
+  /* About section number — big stroked 01, flows below stats on mobile */
   .section-number {
-    position: absolute;
-    right: var(--page-margin);
-    bottom: 32px;
+    position: static;
+    align-self: flex-end;
+    margin-top: 32px;
     font-size: 96px;
     line-height: 0.8;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.22);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
     color: transparent;
-    z-index: -1 !important;
+    z-index: auto;
     pointer-events: none;
   }
 
@@ -2135,8 +2121,8 @@ body.section-pager-active {
     line-height: 0.8;
     text-align: right;
     color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.22);
-    z-index: -1 !important;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
+    z-index: 0;
     pointer-events: none;
   }
 
@@ -2303,8 +2289,8 @@ body.section-pager-active {
     line-height: 0.8;
     text-align: right;
     color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.22);
-    z-index: -1 !important;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
+    z-index: 0;
     pointer-events: none;
   }
 
@@ -2402,11 +2388,11 @@ body.section-pager-active {
     border-bottom: 1px solid #121212;
   }
   .achievements-number-text {
-    z-index: -1 !important;
+    z-index: 0;
     font-size: 96px;
     line-height: 0.8;
     color: transparent;
-    -webkit-text-stroke: 1.5px rgba(18,18,18,0.22);
+    -webkit-text-stroke: 1.5px rgba(18,18,18,0.4);
     text-align: right;
   }
   .collab-text {
@@ -2423,10 +2409,9 @@ body.section-pager-active {
 
   .name-joshua,
   .name-zekeri,
-  .name-joshua-white { font-size: 40px !important; }
-  .name-zekeri { margin-top: 0; }
+  .name-joshua-white { font-size: 32px !important; }
 
-  .number-text { font-size: 64px; }
+  .number-text { font-size: 56px; }
 
   .about-title,
   .skills-title,

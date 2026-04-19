@@ -117,7 +117,8 @@ export default function Home() {
       {/* Text Container */}
       <div className="text-container">
         <span className="role">Product designer</span>
-        <span className="role">frontend developer</span>
+        <span className="role">Full stack developer</span>
+        <span className="role">Blockchain developer</span>
       </div>
 
 
