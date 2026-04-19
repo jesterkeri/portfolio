@@ -1869,17 +1869,24 @@ body.section-pager-active {
 
   /* Hero image centered between the names, scaled for mobile */
   .hero-image {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
     height: 72vh !important;
     width: auto !important;
     max-width: 60vw;
     z-index: 10;
     object-fit: contain;
   }
-  .hero-image.ghost-image { display: none !important; }
+  .hero-image:not(.ghost-image) {
+    transform: translate(-50%, -50%);
+  }
+
+  /* Ghost images — tighter offsets for narrow viewports */
+  .hero-image.ghost-left-1  { --ghost-offset: calc(-50% - 32px); }
+  .hero-image.ghost-left-2  { --ghost-offset: calc(-50% - 64px); }
+  .hero-image.ghost-right-1 { --ghost-offset: calc(-50% + 32px); }
+  .hero-image.ghost-right-2 { --ghost-offset: calc(-50% + 64px); }
 
   /* White masked JOSHUA mirrors the black JOSHUA size; JS positions it. */
   .name-joshua-white {
