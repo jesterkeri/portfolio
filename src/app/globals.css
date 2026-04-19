@@ -1676,7 +1676,7 @@ body.section-pager-active {
   .achievements-navigation {
     top: 20px;
     height: 44px;
-    z-index: 600;
+    z-index: 700;
   }
 
   .nav-container { gap: 0; }
