@@ -4,6 +4,14 @@
   --page-margin: 74px;
 }
 
+/* Base Desktop Utility overrides */
+.mobile-only {
+  display: none !important;
+}
+.mobile-menu-overlay {
+  display: none;
+}
+
 /* Page Transition Curtains */
 .curtain {
   position: fixed;

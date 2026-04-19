@@ -98,8 +98,8 @@ export default function Projects() {
               {/* Expanded Content */}
               <div className="project-content-expanded">
                 <div 
-                   className="mobile-only project-close" 
-                   onClick={(e) => { e.stopPropagation(); handleCardClick(index); }}
+                  className="project-close" 
+                  onClick={(e) => { e.stopPropagation(); handleCardClick(index); }}
                 >
                   Close ✕
                 </div>
