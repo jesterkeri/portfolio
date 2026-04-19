@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { TransitionLink } from "@/components/TransitionLink";
+import { Navigation } from "@/components/Navigation";
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement>(null);
   const blackTextRef = useRef<HTMLHeadingElement>(null);
   const whiteTextRef = useRef<HTMLHeadingElement>(null);
-  const [showSocials, setShowSocials] = useState(false);
 
   useEffect(() => {
     const updateTextMask = (): void => {
@@ -71,24 +71,7 @@ export default function Home() {
     <main className="home">
       <div className="background-color" />
 
-      {/* Navigation */}
-      <nav className="navigation">
-        <div className="nav-container">
-          <TransitionLink href="/" className="logo">Jester.keri</TransitionLink>
-          <ul className="nav-links">
-            <li><TransitionLink href="/about">About</TransitionLink></li>
-            <li><TransitionLink href="/skills">Skills</TransitionLink></li>
-            <li><TransitionLink href="/projects">Projects</TransitionLink></li>
-            <li><TransitionLink href="/achievements">Achievements</TransitionLink></li>
-          </ul>
-        </div>
-        <div className="contact-btn" onClick={() => setShowSocials(!showSocials)}>
-          <span>Contact</span>
-          <svg className="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-      </nav>
+      <Navigation variant="home" activePath="/" />
 
       {/* Name Text (Black - behind image) */}
       <div className="name-container">
@@ -136,15 +119,7 @@ export default function Home() {
         <span className="role">frontend developer</span>
       </div>
 
-      {/* Socials */}
-      <div className={`socials ${showSocials ? 'socials-visible' : ''}`}>
-        <div className="socials-content">
-          <a href="#" className="social-link">X</a>
-          <a href="https://github.com/jesterkeri" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-          <span className="social-item">Telegram</span>
-          <span className="social-item">Email</span>
-        </div>
-      </div>
+
     </main>
   );
 }

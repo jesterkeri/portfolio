@@ -1,33 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { TransitionLink } from "@/components/TransitionLink";
 import { Typewriter } from "@/components/Typewriter";
 import { SectionPager } from "@/components/SectionPager";
+import { Navigation } from "@/components/Navigation";
 
 export default function About() {
-  const [showSocials, setShowSocials] = useState(false);
 
   return (
     <section className="about-section">
-      {/* Navigation */}
-      <nav className="about-navigation">
-        <div className="nav-container">
-          <TransitionLink href="/" className="logo about-logo">Jester.keri</TransitionLink>
-          <ul className="nav-links about-nav-links">
-            <li><TransitionLink href="/about" className="active">About</TransitionLink></li>
-            <li><TransitionLink href="/skills">Skills</TransitionLink></li>
-            <li><TransitionLink href="/projects">Projects</TransitionLink></li>
-            <li><TransitionLink href="/achievements">Achievements</TransitionLink></li>
-          </ul>
-        </div>
-        <div className="contact-btn about-contact-btn" onClick={() => setShowSocials(!showSocials)}>
-          <span>Contact</span>
-          <svg className="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="#121212" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-      </nav>
+      <Navigation variant="about" activePath="/about" />
 
       {/* About Header */}
       <div className="about-header">
@@ -186,15 +168,7 @@ export default function About() {
         </div>
       </SectionPager>
 
-      {/* Socials */}
-      <div className={`socials ${showSocials ? 'socials-visible' : ''}`}>
-        <div className="socials-content">
-          <a href="#" className="social-link">X</a>
-          <a href="https://github.com/jesterkeri" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-          <span className="social-item">Telegram</span>
-          <span className="social-item">Email</span>
-        </div>
-      </div>
+
     </section>
   );
 }

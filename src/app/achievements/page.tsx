@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { TransitionLink } from "@/components/TransitionLink";
+import { Navigation } from "@/components/Navigation";
 
 const achievements = [
   {
@@ -23,7 +23,6 @@ const achievements = [
 ];
 
 export default function Achievements() {
-  const [showSocials, setShowSocials] = useState(false);
 
   return (
     <section className="achievements-section">
@@ -41,24 +40,7 @@ export default function Achievements() {
       <Image src="/eren-front.png" alt="" width={770} height={848} className="achievements-hero achievements-ghost ghost-right-1" />
       <Image src="/eren-front.png" alt="" width={770} height={848} className="achievements-hero achievements-ghost ghost-right-2" />
 
-      {/* Navigation */}
-      <nav className="achievements-navigation">
-        <div className="nav-container">
-          <TransitionLink href="/" className="logo achievements-logo">Jester.keri</TransitionLink>
-          <ul className="nav-links achievements-nav-links">
-            <li><TransitionLink href="/about">About</TransitionLink></li>
-            <li><TransitionLink href="/skills">Skills</TransitionLink></li>
-            <li><TransitionLink href="/projects">Projects</TransitionLink></li>
-            <li><TransitionLink href="/achievements" className="active">Achievements</TransitionLink></li>
-          </ul>
-        </div>
-        <div className="contact-btn achievements-contact-btn" onClick={() => setShowSocials(!showSocials)}>
-          <span>Contact</span>
-          <svg className="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-      </nav>
+      <Navigation variant="achievements" activePath="/achievements" />
 
       {/* Achievements Header */}
       <div className="achievements-header">
@@ -90,15 +72,7 @@ export default function Achievements() {
         <p className="collab-text">Available for collaboration on Web2 and Web3 projects.</p>
       </div>
 
-      {/* Socials */}
-      <div className={`socials ${showSocials ? 'socials-visible' : ''}`}>
-        <div className="socials-content">
-          <a href="#" className="social-link">X</a>
-          <a href="https://github.com/jesterkeri" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-          <span className="social-item">Telegram</span>
-          <span className="social-item">Email</span>
-        </div>
-      </div>
+
     </section>
   );
 }
