@@ -73,28 +73,29 @@ export function Navigation({ variant = "home", activePath = "/" }: NavigationPro
 
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="hamburger-btn mobile-only" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={burgerStroke} strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
+        {/* Global Nav Actions (Contact + Hamburger) */}
+        <div className="nav-actions">
+          <div className={`${contact}`} onClick={() => setShowSocials(!showSocials)}>
+            <span>Contact</span>
+            <svg className="arrow-icon mobile-hide" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={burgerStroke} strokeWidth="2">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          )}
-        </div>
+          </div>
 
-        {/* Desktop Contact Btn */}
-        <div className={`${contact} desktop-only`} onClick={() => setShowSocials(!showSocials)}>
-          <span>Contact</span>
-          <svg className="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <div className="hamburger-btn mobile-only" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={burgerStroke} strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={burgerStroke} strokeWidth="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            )}
+          </div>
         </div>
       </nav>
 
@@ -102,14 +103,11 @@ export function Navigation({ variant = "home", activePath = "/" }: NavigationPro
       <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-content">
           <ul className="mobile-nav-links">
-            <li><TransitionLink href="/about" className={activePath === "/about" ? "active" : ""}>About</TransitionLink></li>
-            <li><TransitionLink href="/skills" className={activePath === "/skills" ? "active" : ""}>Skills</TransitionLink></li>
-            <li><TransitionLink href="/projects" className={activePath === "/projects" ? "active" : ""}>Projects</TransitionLink></li>
-            <li><TransitionLink href="/achievements" className={activePath === "/achievements" ? "active" : ""}>Achievements</TransitionLink></li>
+            <li><TransitionLink href="/about" className={activePath === "/about" ? "active" : ""} onClick={() => setIsMobileMenuOpen(false)}>About</TransitionLink></li>
+            <li><TransitionLink href="/skills" className={activePath === "/skills" ? "active" : ""} onClick={() => setIsMobileMenuOpen(false)}>Skills</TransitionLink></li>
+            <li><TransitionLink href="/projects" className={activePath === "/projects" ? "active" : ""} onClick={() => setIsMobileMenuOpen(false)}>Projects</TransitionLink></li>
+            <li><TransitionLink href="/achievements" className={activePath === "/achievements" ? "active" : ""} onClick={() => setIsMobileMenuOpen(false)}>Achievements</TransitionLink></li>
           </ul>
-          <div className="mobile-contact" onClick={() => setShowSocials(!showSocials)}>
-            <span>Contact</span>
-          </div>
         </div>
       </div>
 

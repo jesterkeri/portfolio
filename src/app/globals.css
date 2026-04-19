@@ -8,6 +8,12 @@
 .mobile-only {
   display: none !important;
 }
+.nav-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
 .mobile-menu-overlay {
   display: none;
 }
@@ -1660,6 +1666,7 @@ body.section-pager-active {
 
   .desktop-only { display: none !important; }
   .mobile-only  { display: flex !important; }
+  .mobile-hide  { display: none !important; }
 
   /* ========== NAVIGATION ========== */
   .navigation,
@@ -1782,38 +1789,26 @@ body.section-pager-active {
   .mobile-nav-links li a.active { opacity: 1; }
   .mobile-nav-links li a.active::after { opacity: 1; transform: translateX(2px); }
 
-  .mobile-contact {
-    align-self: flex-start;
-    padding: 16px 28px;
-    background: #FFFFFF;
-    border-radius: 6px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
-    cursor: pointer;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.34s;
-  }
-  .mobile-menu-overlay.open .mobile-contact { opacity: 1; transform: translateY(0); }
-  .mobile-contact span {
-    font-family: var(--font-audiowide), cursive;
-    color: #121212 !important;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-  }
-
   /* Socials popup positioning on mobile */
   .socials {
-    position: fixed;
-    top: auto;
-    bottom: 40px;
-    left: var(--page-margin);
-    right: auto;
+    position: absolute;
+    top: 64px;
+    right: var(--page-margin);
+    bottom: auto;
+    left: auto;
     padding: 24px;
     z-index: 800; /* Force above the mobile menu overlay (650) */
     min-width: 160px;
     border-radius: 14px;
     background: #121212 !important; /* Solid dark */
     box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  .contact-btn {
+    padding: 8px 16px;
+  }
+  .contact-btn span {
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
   /* Mobile socials are always white-text regardless of page theme since the modal is dark */
   .socials-content a,
