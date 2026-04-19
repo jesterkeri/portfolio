@@ -1803,15 +1803,26 @@ body.section-pager-active {
 
   /* Socials popup positioning on mobile */
   .socials {
-    top: 74px;
-    right: var(--page-margin);
-    padding: 20px;
-    z-index: 550;
+    position: fixed;
+    top: auto;
+    bottom: 40px;
+    left: var(--page-margin);
+    right: auto;
+    padding: 24px;
+    z-index: 800; /* Force above the mobile menu overlay (650) */
     min-width: 160px;
     border-radius: 14px;
-    background: rgba(18,18,18,0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #121212 !important; /* Solid dark */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  /* Mobile socials are always white-text regardless of page theme since the modal is dark */
+  .socials-content a,
+  .socials-content span {
+    color: #FFFFFF !important;
+  }
+  .socials-content a::after,
+  .socials-content span::after {
+    background-color: #FFFFFF !important;
   }
 
   /* ========== HOME ========== */
