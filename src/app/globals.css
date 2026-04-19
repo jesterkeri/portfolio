@@ -100,6 +100,18 @@ body:has(.achievements-section) {
   background: #FDFCFF;
 }
 
+/* Home is a fixed-viewport page — never allow vertical scroll on desktop. */
+body:has(.home) {
+  overflow: hidden;
+  height: 100vh;
+  min-height: 100vh;
+}
+body:has(.home),
+html:has(.home) {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 /* Background Color */
 .background-color {
   position: absolute;
