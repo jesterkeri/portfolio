@@ -1626,401 +1626,131 @@ body.section-pager-active {
     --page-margin: 24px;
   }
 
-  .desktop-only {
-    display: none !important;
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex !important; }
+
+  /* Mobile Nav Overrides */
+  .navigation, .about-navigation, .skills-navigation, .projects-navigation, .achievements-navigation {
+    top: 24px;
+    z-index: 400;
   }
 
-  .mobile-only {
-    display: flex !important;
-  }
-
-  /* Hamburger & Mobile Menu Reset */
-  .hamburger-btn {
-    cursor: pointer;
-    z-index: 200;
-  }
+  .hamburger-btn { cursor: pointer; z-index: 500; }
 
   .mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #121212;
-    z-index: 150;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: #121212; z-index: 350; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    transform: translateY(-100%); transition: transform 0.4s ease;
   }
+  .mobile-menu-overlay.open { transform: translateY(0); }
 
-  .mobile-menu-overlay.open {
-    transform: translateY(0);
-  }
-
-  .mobile-nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    text-align: center;
-  }
-
-  .mobile-nav-links li a {
-    font-family: var(--font-montserrat), sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-
+  .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 32px; text-align: center; }
+  .mobile-nav-links li a { font-family: var(--font-montserrat), sans-serif; font-weight: 600; font-size: 24px; color: #FFFFFF; text-decoration: none; }
   .mobile-contact {
-    margin-top: 48px;
-    padding: 12px 32px;
-    background: #FFFFFF;
-    border-radius: 8px;
+    margin-top: 48px; padding: 12px 32px; background: #FFFFFF; border-radius: 8px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
   }
+  .mobile-contact span { font-family: var(--font-audiowide), cursive; color: #121212; font-size: 18px; }
 
-  .mobile-contact span {
-    font-family: var(--font-audiowide), cursive;
-    color: #121212;
-    font-size: 18px;
-  }
-
-  /* Home Section */
+  /* HOME SECTION FIX */
   .home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 80px;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  .background-color {
-    width: 100vw;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    padding-top: 100px; padding-bottom: 120px; overflow-x: hidden; height: auto; min-height: 100vh;
   }
 
   .hero-image {
-    position: relative;
-    height: 40vh !important;
-    left: auto;
-    transform: none;
-    margin: 0 auto;
-    order: -1;
+    position: relative; max-width: 90vw; height: auto !important; max-height: 50vh;
+    left: auto; top: auto; bottom: auto; transform: none; order: 2; z-index: 10;
   }
 
-  .hero-image.ghost-image {
-    display: none;
-  }
+  .hero-image.ghost-image { display: none; }
 
   .name-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    margin-top: -20px;
-    order: 0;
+    position: relative; top: auto; left: auto; right: auto; transform: none;
+    flex-direction: column; justify-content: center; align-items: center; width: 100%;
+    order: 1; z-index: 11; margin-bottom: -15vh; /* Overlay image natively */
   }
 
-  .name-joshua, .name-zekeri {
-    font-size: clamp(48px, 15vw, 80px);
-  }
+  .name-joshua, .name-zekeri { font-size: clamp(48px, 15vw, 84px); text-align: center; line-height: 1.1; }
 
   .name-joshua-white {
-    display: none;
+    /* MUST remaining enabled and absolute/fixed to work with React mask coordinate scripts */
+    font-size: clamp(48px, 15vw, 84px);
   }
 
   .design-text {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    height: 48px;
-    margin-top: 40px;
-    order: 1;
+    position: relative; top: auto; left: auto; bottom: auto; height: 60px;
+    width: 100%; display: flex; justify-content: center; align-items: center;
+    order: 3; margin-top: 24px;
   }
-
-  .design-text text {
-    font-size: 48px;
-  }
+  .design-text text { font-size: clamp(32px, 10vw, 54px); }
 
   .text-container {
-    position: relative;
-    right: auto;
-    top: auto;
-    align-items: flex-start;
-    margin-top: 20px;
-    order: 2;
+    position: relative; right: auto; top: auto; flex-direction: column; align-items: flex-end;
+    width: 100%; border-bottom: none; order: 4; z-index: 20; padding-right: var(--page-margin);
   }
+  .role { font-size: 20px; text-align: right; }
 
   .number-text {
-    position: absolute;
-    bottom: 24px;
-    right: var(--page-margin);
-    font-size: 80px;
-    z-index: 5;
+    position: absolute; right: var(--page-margin); bottom: 120px; font-size: 72px;
+    -webkit-text-stroke: 1px #121212; z-index: 5; line-height: 1;
   }
 
-  .socials {
-    top: 80px; /* Below standard mobile nav */
-    padding: 16px;
-  }
+  .socials { top: 80px; padding: 16px; right: var(--page-margin); }
 
-  /* About Section */
-  .about-section {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+  /* ABOUT SECTION FIX */
+  .about-section { display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; min-height: 100vh; padding-bottom: 80px; }
+  .about-header { top: 80px; }
+  .about-title { font-size: 40px; }
 
-  .about-header {
-    top: 80px;
-  }
+  .hello-section { position: relative; top: auto; left: auto; margin-top: 140px; display: flex; flex-direction: column; padding: 0 var(--page-margin); }
+  .im-jester { font-size: 40px; line-height: 1.2; }
 
-  .about-title {
-    font-size: 40px;
-  }
+  .about-content { position: relative; right: auto; top: auto; text-align: left; margin-top: 32px; padding: 0 var(--page-margin); max-width: 100%; }
+  .about-description { font-size: 22px; line-height: 32px; }
+  .about-subdescription { margin-left: 0; max-width: 100%; font-size: 16px; margin-top: 24px; }
 
-  .hello-section {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin-top: 160px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .im-jester {
-    font-size: 32px;
-    line-height: normal;
-  }
-
-  .about-content {
-    position: relative;
-    right: auto;
-    top: auto;
-    text-align: left;
-    margin-top: 40px;
-    padding-bottom: 24px;
-  }
-
-  .about-description {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .about-subdescription {
-    margin-left: 0;
-    max-width: 100%;
-  }
-
-  .bottom-section {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .experience-section {
-    width: 100%;
-  }
+  .bottom-section { position: relative; left: auto; right: auto; top: auto; flex-direction: column; align-items: flex-start; gap: 40px; margin-top: 48px; padding: 0 var(--page-margin); }
+  .experience-section { width: 100%; }
   
-  .experience-label {
-    font-size: 16px;
-  }
+  .section-number { position: absolute; right: var(--page-margin); bottom: 24px; font-size: 72px; -webkit-text-stroke: 1px #FFFFFF; }
 
-  .section-number {
-    font-size: 80px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
+  /* SKILLS SECTION FIX */
+  .skills-section { display: flex; flex-direction: column; overflow-y: hidden; }
+  .skills-header { top: 80px; }
+  .skills-title { font-size: 40px; }
+  .skills-profile { position: relative; top: auto; left: auto; width: 60vw; height: 60vw; max-width: 280px; max-height: 280px; margin: 140px auto 20px auto; }
+  .skills-list { position: relative; right: auto; top: auto; width: 100%; align-items: center; padding: 0 var(--page-margin); }
+  .skill-category { align-items: center; width: 100%; }
+  .skill-name { text-align: center; font-size: 20px; }
+  .skill-name.large { text-align: center; font-size: 24px; }
+  .skills-number-text { position: absolute; right: var(--page-margin); bottom: 24px; left: auto; font-size: 72px; -webkit-text-stroke: 1px #FFFFFF; }
 
-  /* Skills Section */
-  .skills-section {
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
-  }
-
-  .skills-header {
-    top: 80px;
-  }
-  .skills-title {
-    font-size: 40px;
-  }
-
-  .skills-profile {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 200px;
-    height: 200px;
-    margin: 160px auto 40px auto;
-  }
-
-  .skills-list {
-    position: relative;
-    right: auto;
-    top: auto;
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  .skill-category {
-    align-items: flex-start;
-  }
-
-  .skill-name {
-    text-align: left;
-    font-size: 20px;
-  }
-
-  .skill-name.large {
-    font-size: 24px;
-  }
-
-  .skills-number-text {
-    font-size: 80px;
-    bottom: 24px;
-  }
-
-  /* Projects Section */
-  .projects-section {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-
-  .projects-header {
-    top: 80px;
-  }
-  .projects-title {
-    font-size: 40px;
-  }
-
+  /* PROJECTS SECTION FIX */
+  .projects-section { display: flex; flex-direction: column; overflow-y: auto; }
+  .projects-header { top: 80px; }
+  .projects-title { font-size: 40px; }
   .projects-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    margin-top: 160px;
-    gap: 24px;
-    padding-bottom: 120px; /* space for number */
+    position: relative; top: auto; left: auto; flex-direction: column; width: 100%; height: auto;
+    margin-top: 140px; gap: 24px; padding-bottom: 120px; margin-left: 0; padding-left: var(--page-margin); padding-right: var(--page-margin);
   }
-
-  .project-card {
-    width: 100%;
-    height: 300px;
-  }
-
+  .project-card { width: 100%; height: 320px; }
   .project-card.expanded {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 300;
-    border-radius: 0;
-    border: none;
-    margin: 0;
-    padding: 0;
+    position: fixed; inset: 0; width: 100%; height: 100vh; z-index: 450; border-radius: 0; border: none; margin: 0; padding: 0;
   }
+  .project-card.expanded .project-card-inner { border-radius: 0; height: 100vh; overflow-y: auto; }
+  .project-card.expanded .project-content-expanded { border-radius: 0; padding: 24px; padding-top: 60px; }
+  .projects-number-text { position: absolute; right: var(--page-margin); bottom: 24px; left: auto; font-size: 72px; -webkit-text-stroke: 1px #FFFFFF; }
 
-  .project-card.expanded .project-card-inner {
-    border-radius: 0;
-  }
-
-  .project-card.expanded .project-content-expanded {
-    border-radius: 0;
-    padding: 24px;
-    padding-top: 80px; /* Space for a close button equivalent */
-    overflow-y: auto;
-  }
-
-  .project-description {
-    font-size: 14px;
-  }
-
-  .projects-number-text {
-    font-size: 80px;
-    bottom: 24px;
-    z-index: 5;
-  }
-
-  /* Achievements Section */
-  .achievements-section {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-
-  .achievements-header {
-    top: 80px;
-  }
-  .achievements-title {
-    font-size: 40px;
-  }
-
-  .achievements-hero {
-    position: relative;
-    height: 30vh !important;
-    left: auto;
-    transform: none;
-    margin: 0 auto;
-    order: -1;
-  }
-
-  .achievements-ghost {
-    display: none;
-  }
-
-  .achievements-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    margin-top: 160px;
-    padding-bottom: 40px;
-  }
-
-  .achievement-card {
-    padding: 16px;
-  }
-
-  .thank-you-section {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    align-items: flex-start;
-    margin-top: 40px;
-    padding-bottom: 60px;
-  }
-
-  .thank-you-text {
-    text-align: left;
-    font-size: 24px;
-  }
-
-  .achievements-number-text {
-    font-size: 80px;
-    text-align: left;
-  }
-
-  .collab-text {
-    text-align: left;
-  }
+  /* ACHIEVEMENTS SECTION FIX */
+  .achievements-section { display: flex; flex-direction: column; overflow-y: auto; }
+  .achievements-header { top: 80px; }
+  .achievements-title { font-size: 40px; }
+  .achievements-hero { position: relative; height: 30vh !important; max-width: 90vw; left: auto; transform: none; margin: 0 auto; order: -1; }
+  .achievements-ghost { display: none; }
+  .achievements-container { position: relative; top: auto; left: auto; width: 100%; margin-top: 140px; padding: 0 var(--page-margin) 40px var(--page-margin); }
+  .thank-you-section { position: relative; right: auto; bottom: auto; align-items: flex-end; margin-top: 20px; padding: 0 var(--page-margin) 60px var(--page-margin); width: 100%; }
+  .thank-you-text { text-align: right; font-size: 24px; }
+  .achievements-number-text { position: static; font-size: 72px; text-align: right; }
 }
