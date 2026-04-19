@@ -1629,6 +1629,14 @@ body.section-pager-active {
    ===================================================== */
 
 /* --- Tablet (up to 768px) inherits mobile structure with adjusted paddings --- */
+/* =====================================================
+   MOBILE STYLES — Drop-in replacement
+   Replace the existing @media (max-width: 768px) block
+   at the bottom of src/app/globals.css with this file's
+   contents. Mobile-only; desktop is untouched.
+   ===================================================== */
+
+/* --- Tablet (up to 768px) inherits mobile structure with adjusted paddings --- */
 @media (max-width: 768px) {
   :root {
     --page-margin: 24px;
@@ -1651,7 +1659,7 @@ body.section-pager-active {
 
   .nav-container { gap: 0; }
 
-  .logo { font-size: 18px; letter-spacing: -0.2px; }
+  .logo { font-size: 16px; letter-spacing: -0.2px; }
 
   .hamburger-btn {
     cursor: pointer;
@@ -1732,13 +1740,14 @@ body.section-pager-active {
   .mobile-menu-overlay.open .mobile-nav-links li:nth-child(3) { transition-delay: 0.20s; }
   .mobile-menu-overlay.open .mobile-nav-links li:nth-child(4) { transition-delay: 0.26s; }
 
+  /* Reduced menu text size slightly for modern proportionality */
   .mobile-nav-links li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 4px;
     font-family: var(--font-audiowide), cursive;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1;
     color: #FFFFFF !important;
     text-decoration: none;
@@ -1749,7 +1758,7 @@ body.section-pager-active {
   .mobile-nav-links li a::after {
     content: "→";
     font-family: var(--font-montserrat), sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     opacity: 0.35;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
@@ -1773,7 +1782,7 @@ body.section-pager-active {
   .mobile-contact span {
     font-family: var(--font-audiowide), cursive;
     color: #121212 !important;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 0.5px;
   }
 
@@ -1823,7 +1832,7 @@ body.section-pager-active {
   }
   .name-joshua,
   .name-zekeri {
-    font-size: clamp(56px, 17vw, 84px);
+    font-size: clamp(48px, 16vw, 76px);
     line-height: 0.92;
     letter-spacing: -1px;
     display: block;
@@ -1851,7 +1860,7 @@ body.section-pager-active {
 
   /* White masked JOSHUA — kept, script handles positioning on resize */
   .name-joshua-white {
-    font-size: clamp(56px, 17vw, 84px) !important;
+    font-size: clamp(48px, 16vw, 76px) !important;
     line-height: 0.92;
     letter-spacing: -1px;
   }
@@ -1871,7 +1880,7 @@ body.section-pager-active {
     pointer-events: none;
     z-index: 2;
   }
-  .design-text text { font-size: 64px; }
+  .design-text text { font-size: 52px; }
 
   /* Role text container */
   .text-container {
@@ -1888,10 +1897,10 @@ body.section-pager-active {
     z-index: 20;
   }
   .role {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.3;
     text-align: right;
-    letter-spacing: 0.3px;
+    letter-spacing: 0;
   }
 
   /* Big stroked 00 */
@@ -1899,7 +1908,7 @@ body.section-pager-active {
     position: absolute;
     right: var(--page-margin);
     bottom: 32px;
-    font-size: 104px;
+    font-size: 84px;
     line-height: 0.8;
     color: transparent;
     -webkit-text-stroke: 1.5px #121212;
@@ -1927,7 +1936,7 @@ body.section-pager-active {
     border-bottom: 1px solid rgba(255,255,255,0.25);
   }
   .about-title {
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: -0.5px;
   }
 
@@ -1939,13 +1948,13 @@ body.section-pager-active {
     padding: 0;
   }
   .hello-text {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.3;
     letter-spacing: 0.3px;
   }
   .im-jester {
-    font-size: 38px;
-    line-height: 1.05;
+    font-size: 32px;
+    line-height: 1.1;
     letter-spacing: -0.8px;
     margin-top: 6px;
   }
@@ -1955,22 +1964,22 @@ body.section-pager-active {
     right: auto;
     top: auto;
     text-align: left;
-    margin-top: 32px;
+    margin-top: 24px;
     max-width: 100%;
     padding: 0;
   }
   .about-description {
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.55;
     font-weight: 500;
-    letter-spacing: -0.1px;
+    letter-spacing: 0;
     text-wrap: pretty;
   }
   .about-description .highlight { color: #C084FC; }  /* Refined highlight color */
   .about-subdescription {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 16px;
     margin-left: 0;
     max-width: 100%;
     opacity: 0.6;
@@ -1984,12 +1993,12 @@ body.section-pager-active {
     right: auto;
     flex-direction: column;
     align-items: stretch;
-    margin-top: 48px;
+    margin-top: 40px;
     padding: 0;
   }
   .experience-section { width: 100%; gap: 0; }
   .experience-item {
-    padding: 18px 0;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(255,255,255,0.15);
     justify-content: space-between;
     gap: 16px;
@@ -1997,11 +2006,11 @@ body.section-pager-active {
   .experience-item:first-child { padding-top: 0; }
   .experience-content { gap: 12px; flex-shrink: 0; }
   .experience-number {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1;
   }
   .experience-label {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.3;
     font-weight: 500;
     text-align: right;
@@ -2013,7 +2022,7 @@ body.section-pager-active {
     position: absolute;
     right: var(--page-margin);
     bottom: 32px;
-    font-size: 120px;
+    font-size: 96px;
     line-height: 0.8;
     -webkit-text-stroke: 1.5px rgba(255,255,255,0.22);
     color: transparent;
@@ -2041,14 +2050,14 @@ body.section-pager-active {
     padding-bottom: 14px;
     border-bottom: 1px solid rgba(255,255,255,0.25);
   }
-  .skills-title { font-size: 36px; letter-spacing: -0.5px; }
+  .skills-title { font-size: 32px; letter-spacing: -0.5px; }
 
   .skills-profile {
     position: relative;
     top: auto;
     left: auto;
-    width: 184px;
-    height: 184px;
+    width: 160px;
+    height: 160px;
     margin: 40px auto 8px auto;
   }
   .skills-profile-image { border-width: 1.5px; }
@@ -2071,19 +2080,19 @@ body.section-pager-active {
   }
   .skill-name {
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.2;
     width: 100%;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255,255,255,0.15);
   }
-  .skill-name.large { font-size: 22px; }
+  .skill-name.large { font-size: 20px; }
 
   .skill-content {
     background: rgba(255,255,255,0.025);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
-    padding: 18px 16px;
+    padding: 16px;
     width: 100%;
   }
   /* Simplify the animated conic border on mobile — cheap + calm */
@@ -2091,11 +2100,11 @@ body.section-pager-active {
   .skill-content::after { display: none; }
 
   .skill-items {
-    gap: 12px 18px;
+    gap: 10px 16px;
     justify-content: flex-start;
   }
   .skill-item {
-    font-size: 14px;
+    font-size: 13px;
     color: rgba(255,255,255,0.75);
   }
   .skill-item:hover { transform: none; }
@@ -2105,7 +2114,7 @@ body.section-pager-active {
     left: auto;
     right: var(--page-margin);
     bottom: 32px;
-    font-size: 120px;
+    font-size: 96px;
     line-height: 0.8;
     text-align: right;
     color: transparent;
@@ -2141,7 +2150,7 @@ body.section-pager-active {
     padding-bottom: 14px;
     border-bottom: 1px solid rgba(255,255,255,0.25);
   }
-  .projects-title { font-size: 36px; letter-spacing: -0.5px; }
+  .projects-title { font-size: 32px; letter-spacing: -0.5px; }
 
   .projects-container {
     position: relative;
@@ -2162,7 +2171,7 @@ body.section-pager-active {
     height: auto;
     padding: 10px;
     border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 20px;
+    border-radius: 16px;
     transition:
       background 0.35s ease,
       border-color 0.35s ease,
@@ -2171,10 +2180,10 @@ body.section-pager-active {
   .project-card-inner {
     width: 100%;
     height: auto;
-    min-height: 92px;
-    padding: 16px 18px;
+    min-height: 84px;
+    padding: 14px 16px;
     background-color: rgba(255,255,255,0.96);
-    border-radius: 14px;
+    border-radius: 12px;
     background-image: none !important;
     flex-direction: row;
     justify-content: space-between;
@@ -2187,13 +2196,13 @@ body.section-pager-active {
     height: auto;
   }
   .project-name {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.15;
     text-align: left;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
   }
   .project-expand { gap: 10px; }
-  .project-expand svg { width: 26px; height: 26px; }
+  .project-expand svg { width: 22px; height: 22px; }
   .expand-text { display: none; }
 
   /* Expanded: inline, card grows in place (no full-screen takeover) */
@@ -2227,9 +2236,9 @@ body.section-pager-active {
     opacity: 1;
     pointer-events: auto;
     background: #F2F2F2;
-    border-radius: 14px;
-    padding: 22px 20px 24px 20px;
-    gap: 14px;
+    border-radius: 12px;
+    padding: 20px 18px 22px 18px;
+    gap: 12px;
     overflow: visible;
     animation: fadeInSlideUp 0.3s ease forwards; /* Refined pop-in */
   }
@@ -2242,28 +2251,28 @@ body.section-pager-active {
   .project-card.expanded .project-close { display: none !important; } /* not needed for inline expand */
 
   .project-name-expanded {
-    font-size: 26px;
+    font-size: 22px;
     line-height: 1.1;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.3px;
     color: #121212;
   }
   .project-description {
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
     color: #121212;
     opacity: 0.78;
     flex: none;
   }
   .project-link {
-    gap: 10px;
+    gap: 8px;
     margin-top: 6px;
   }
   .project-link-text {
-    font-size: 14px;
+    font-size: 13px;
     color: #121212;
     font-weight: 600;
   }
-  .project-link svg { width: 26px; height: 26px; }
+  .project-link svg { width: 22px; height: 22px; }
   .project-link svg circle { fill: #121212; }
   .project-link svg path { stroke: #FFFFFF; }
 
@@ -2272,7 +2281,7 @@ body.section-pager-active {
     left: auto;
     right: var(--page-margin);
     bottom: 32px;
-    font-size: 120px;
+    font-size: 96px;
     line-height: 0.8;
     text-align: right;
     color: transparent;
@@ -2319,7 +2328,7 @@ body.section-pager-active {
     border-bottom: 1px solid rgba(0,0,0,0.25);
     z-index: 10;
   }
-  .achievements-title { font-size: 36px; letter-spacing: -0.5px; }
+  .achievements-title { font-size: 32px; letter-spacing: -0.5px; }
 
   .achievements-container {
     position: relative;
@@ -2333,27 +2342,27 @@ body.section-pager-active {
   }
 
   .achievement-card {
-    padding: 20px 18px;
-    gap: 12px;
-    border-radius: 14px;
+    padding: 18px 16px;
+    gap: 10px;
+    border-radius: 12px;
     border: none;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
   }
   .achievement-header-row { gap: 10px; }
-  .achievement-header-row svg { width: 20px; height: 20px; }
+  .achievement-header-row svg { width: 18px; height: 18px; }
   .achievement-place {
-    font-size: 13px;
-    letter-spacing: 0.3px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
     opacity: 0.7;
   }
   .achievement-card-title {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.25;
     letter-spacing: -0.2px;
   }
   .achievement-description {
     font-size: 13px;
-    line-height: 1.55;
+    line-height: 1.5;
     opacity: 0.7;
   }
 
@@ -2364,27 +2373,27 @@ body.section-pager-active {
     margin-top: 36px;
     padding: 0;
     align-items: flex-end;
-    gap: 10px;
+    gap: 8px;
     z-index: 10;
   }
   .thank-you-text {
-    font-size: 26px;
+    font-size: 22px;
     line-height: 1.1;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
     padding-bottom: 8px;
     border-bottom: 1px solid #121212;
   }
   .achievements-number-text {
-    font-size: 120px;
+    font-size: 96px;
     line-height: 0.8;
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(18,18,18,0.22);
     text-align: right;
   }
   .collab-text {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.5;
-    max-width: 260px;
+    max-width: 240px;
     opacity: 0.7;
   }
 }
@@ -2395,29 +2404,30 @@ body.section-pager-active {
 
   .name-joshua,
   .name-zekeri,
-  .name-joshua-white { font-size: 62px !important; }
+  .name-joshua-white { font-size: 40px !important; }
   .name-zekeri { margin-top: 48vw; }
 
-  .number-text { font-size: 88px; }
+  .number-text { font-size: 64px; }
 
   .about-title,
   .skills-title,
   .projects-title,
-  .achievements-title { font-size: 32px; }
+  .achievements-title { font-size: 28px; }
 
-  .im-jester { font-size: 34px; }
-  .about-description { font-size: 18px; }
+  .im-jester { font-size: 28px; }
+  .about-description { font-size: 15px; }
+  .about-subdescription { font-size: 13px; }
 
   .section-number,
   .skills-number-text,
   .projects-number-text,
-  .achievements-number-text { font-size: 104px; }
+  .achievements-number-text { font-size: 76px; }
 
-  .skills-profile { width: 160px; height: 160px; }
+  .skills-profile { width: 140px; height: 140px; }
 
-  .project-name { font-size: 18px; }
-  .project-name-expanded { font-size: 23px; }
-  .achievement-card-title { font-size: 17px; }
+  .project-name { font-size: 16px; }
+  .project-name-expanded { font-size: 20px; }
+  .achievement-card-title { font-size: 15px; }
 }
 
 /* --- Respect users who prefer no motion --- */
