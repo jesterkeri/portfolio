@@ -73,30 +73,31 @@ export default function Home() {
 
       <Navigation variant="home" activePath="/" />
 
-      {/* Name Text (Black - behind image) */}
+      {/* Name Text (Black - behind image) + Natively Stacked Imagery */}
       <div className="name-container">
         <h1 ref={blackTextRef} className="name-joshua">JOSHUA</h1>
+
+        {/* Ghost Images - Left Side */}
+        <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-left-2" />
+        <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-left-1" />
+
+        {/* Hero Image */}
+        <Image
+          ref={imageRef}
+          src="/eren.png"
+          alt="Hero"
+          width={578}
+          height={946}
+          className="hero-image"
+          priority
+        />
+
+        {/* Ghost Images - Right Side */}
+        <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-right-1" />
+        <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-right-2" />
+
         <h1 className="name-zekeri">ZEKERI</h1>
       </div>
-
-      {/* Ghost Images - Left Side */}
-      <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-left-2" />
-      <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-left-1" />
-
-      {/* Hero Image */}
-      <Image
-        ref={imageRef}
-        src="/eren.png"
-        alt="Hero"
-        width={578}
-        height={946}
-        className="hero-image"
-        priority
-      />
-
-      {/* Ghost Images - Right Side */}
-      <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-right-1" />
-      <Image src="/eren.png" alt="" width={578} height={946} className="hero-image ghost-image ghost-right-2" />
 
       {/* White Text Overlay (above image, masked) */}
       <h1 ref={whiteTextRef} className="name-joshua-white">JOSHUA</h1>
