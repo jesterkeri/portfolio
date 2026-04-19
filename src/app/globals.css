@@ -2106,15 +2106,15 @@ body.section-pager-active {
   .skill-name.large { font-size: 20px; }
 
   .skill-content {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     padding: 16px;
     width: 100%;
+    /* border is handled via the animated before/after effect inherited from desktop */
   }
-  /* Simplify the animated conic border on mobile — cheap + calm */
-  .skill-content::before { display: none; }
-  .skill-content::after { display: none; }
+  /* Ensure inner pseudo-element matches new border-radius */
+  .skill-content::after { 
+    border-radius: 13px; 
+  }
 
   .skill-items {
     gap: 10px 16px;
