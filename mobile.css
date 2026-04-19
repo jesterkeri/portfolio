@@ -1,0 +1,399 @@
+@media (max-width: 768px) {
+  :root {
+    --page-margin: 24px;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  /* Hamburger & Mobile Menu Reset */
+  .hamburger-btn {
+    cursor: pointer;
+    z-index: 200;
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #121212;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .mobile-menu-overlay.open {
+    transform: translateY(0);
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .mobile-nav-links li a {
+    font-family: var(--font-montserrat), sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .mobile-contact {
+    margin-top: 48px;
+    padding: 12px 32px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+  }
+
+  .mobile-contact span {
+    font-family: var(--font-audiowide), cursive;
+    color: #121212;
+    font-size: 18px;
+  }
+
+  /* Home Section */
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .background-color {
+    width: 100vw;
+  }
+
+  .hero-image {
+    position: relative;
+    height: 40vh !important;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+    order: -1;
+  }
+
+  .hero-image.ghost-image {
+    display: none;
+  }
+
+  .name-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-top: -20px;
+    order: 0;
+  }
+
+  .name-joshua, .name-zekeri {
+    font-size: clamp(48px, 15vw, 80px);
+  }
+
+  .name-joshua-white {
+    display: none;
+  }
+
+  .design-text {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    height: 48px;
+    margin-top: 40px;
+    order: 1;
+  }
+
+  .design-text text {
+    font-size: 48px;
+  }
+
+  .text-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    align-items: flex-start;
+    margin-top: 20px;
+    order: 2;
+  }
+
+  .number-text {
+    position: absolute;
+    bottom: 24px;
+    right: var(--page-margin);
+    font-size: 80px;
+    z-index: 5;
+  }
+
+  .socials {
+    top: 80px; /* Below standard mobile nav */
+    padding: 16px;
+  }
+
+  /* About Section */
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .about-header {
+    top: 80px;
+  }
+
+  .about-title {
+    font-size: 40px;
+  }
+
+  .hello-section {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .im-jester {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .about-content {
+    position: relative;
+    right: auto;
+    top: auto;
+    text-align: left;
+    margin-top: 40px;
+    padding-bottom: 24px;
+  }
+
+  .about-description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .about-subdescription {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .bottom-section {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .experience-section {
+    width: 100%;
+  }
+  
+  .experience-label {
+    font-size: 16px;
+  }
+
+  .section-number {
+    font-size: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* Skills Section */
+  .skills-section {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+  }
+
+  .skills-header {
+    top: 80px;
+  }
+  .skills-title {
+    font-size: 40px;
+  }
+
+  .skills-profile {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 200px;
+    height: 200px;
+    margin: 160px auto 40px auto;
+  }
+
+  .skills-list {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .skill-category {
+    align-items: flex-start;
+  }
+
+  .skill-name {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .skill-name.large {
+    font-size: 24px;
+  }
+
+  .skills-number-text {
+    font-size: 80px;
+    bottom: 24px;
+  }
+
+  /* Projects Section */
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .projects-header {
+    top: 80px;
+  }
+  .projects-title {
+    font-size: 40px;
+  }
+
+  .projects-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 160px;
+    gap: 24px;
+    padding-bottom: 120px; /* space for number */
+  }
+
+  .project-card {
+    width: 100%;
+    height: 300px;
+  }
+
+  .project-card.expanded {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 300;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .project-card.expanded .project-content-expanded {
+    border-radius: 0;
+    padding: 24px;
+    padding-top: 80px; /* Space for a close button equivalent */
+    overflow-y: auto;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .projects-number-text {
+    font-size: 80px;
+    bottom: 24px;
+    z-index: 5;
+  }
+
+  /* Achievements Section */
+  .achievements-section {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .achievements-header {
+    top: 80px;
+  }
+  .achievements-title {
+    font-size: 40px;
+  }
+
+  .achievements-hero {
+    position: relative;
+    height: 30vh !important;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+    order: -1;
+  }
+
+  .achievements-ghost {
+    display: none;
+  }
+
+  .achievements-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 160px;
+    padding-bottom: 40px;
+  }
+
+  .achievement-card {
+    padding: 16px;
+  }
+
+  .thank-you-section {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .thank-you-text {
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .achievements-number-text {
+    font-size: 80px;
+    text-align: left;
+  }
+
+  .collab-text {
+    text-align: left;
+  }
+}

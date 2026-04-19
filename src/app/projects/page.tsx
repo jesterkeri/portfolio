@@ -96,6 +96,13 @@ export default function Projects() {
 
               {/* Expanded Content */}
               <div className="project-content-expanded">
+                <div 
+                   className="mobile-only" 
+                   style={{ alignSelf: "flex-end", fontFamily: "var(--font-audiowide), cursive", fontSize: "16px", cursor: "pointer", textDecoration: "underline" }}
+                   onClick={(e) => { e.stopPropagation(); handleCardClick(index); }}
+                >
+                  Close ✕
+                </div>
                 <h3 className="project-name-expanded">{project.name}</h3>
                 <p className="project-description">{project.description}</p>
                 <a
