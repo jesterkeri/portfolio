@@ -7,13 +7,15 @@ interface TransitionLinkProps {
   href: string;
   children: ReactNode;
   className?: string;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
-export function TransitionLink({ href, children, className }: TransitionLinkProps) {
+export function TransitionLink({ href, children, className, onClick }: TransitionLinkProps) {
   const { navigateWithTransition } = usePageTransition();
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    onClick?.(e);
     navigateWithTransition(href);
   };
 
