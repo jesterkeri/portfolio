@@ -249,22 +249,22 @@ html:has(.home) {
 
 @keyframes ghostDriftLeft {
   0%, 100% {
-    transform: translateX(var(--ghost-offset));
+    transform: translate(var(--ghost-offset), -50%);
     opacity: var(--ghost-opacity);
   }
   50% {
-    transform: translateX(calc(var(--ghost-offset) - 20px));
+    transform: translate(calc(var(--ghost-offset) - 20px), -50%);
     opacity: calc(var(--ghost-opacity) * 0.6);
   }
 }
 
 @keyframes ghostDriftRight {
   0%, 100% {
-    transform: translateX(var(--ghost-offset));
+    transform: translate(var(--ghost-offset), -50%);
     opacity: var(--ghost-opacity);
   }
   50% {
-    transform: translateX(calc(var(--ghost-offset) + 20px));
+    transform: translate(calc(var(--ghost-offset) + 20px), -50%);
     opacity: calc(var(--ghost-opacity) * 0.6);
   }
 }
@@ -272,14 +272,14 @@ html:has(.home) {
 .hero-image.ghost-left-1 {
   --ghost-opacity: 0.1;
   --ghost-offset: calc(-50% - 80px);
-  transform: translateX(var(--ghost-offset));
+  transform: translate(var(--ghost-offset), -50%);
   opacity: var(--ghost-opacity);
 }
 
 .hero-image.ghost-left-2 {
   --ghost-opacity: 0.05;
   --ghost-offset: calc(-50% - 160px);
-  transform: translateX(var(--ghost-offset));
+  transform: translate(var(--ghost-offset), -50%);
   opacity: var(--ghost-opacity);
   animation-delay: 0.5s;
 }
@@ -292,14 +292,14 @@ html:has(.home) {
 .hero-image.ghost-right-1 {
   --ghost-opacity: 0.1;
   --ghost-offset: calc(-50% + 80px);
-  transform: translateX(var(--ghost-offset));
+  transform: translate(var(--ghost-offset), -50%);
   opacity: var(--ghost-opacity);
 }
 
 .hero-image.ghost-right-2 {
   --ghost-opacity: 0.05;
   --ghost-offset: calc(-50% + 160px);
-  transform: translateX(var(--ghost-offset));
+  transform: translate(var(--ghost-offset), -50%);
   opacity: var(--ghost-opacity);
   animation-delay: 0.5s;
 }
